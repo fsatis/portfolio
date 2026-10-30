@@ -1,0 +1,92 @@
+/* 8 theme palettes. Apply via data-theme="<slug>-<light|dark>" on <html>. */
+[data-theme] {
+  --panel-bg: var(--surface);
+  --ring: 0 0 0 1px var(--line);
+  --card-shadow: 0 0 0 1px var(--line), 0 2px 2px -1px var(--line2), 0 8px 20px -12px var(--line2);
+}
+
+/* ============ 1. MINIMAL (Vercel) — achromatic, Geist ============ */
+[data-theme="minimal-light"] {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --nav-bg: rgba(255,255,255,.86);
+  --text: #171717;
+  --muted: #4d4d4d;
+  --muted2: #808080;
+  --line: rgba(0,0,0,.08);
+  --line2: rgba(0,0,0,.06);
+  --line-strong: #ebebeb;
+  --accent: #171717;
+  --accent-fg: #ffffff;
+  --badge-bg: #ebf5ff;
+  --badge-text: #0068d6;
+  --develop: #0a72ef;
+  --preview: #de1d8d;
+  --ship: #ff5b4f;
+  --sel: hsla(0,0%,95%,1);
+  --hero-glow: radial-gradient(600px 300px at 50% -50px, rgba(0,0,0,.03), transparent 70%);
+}
+[data-theme="minimal-dark"] {
+  --bg: #0a0a0a;
+  --surface: #131313;
+  --nav-bg: rgba(10,10,10,.86);
+  --text: #ededed;
+  --muted: #a1a1a1;
+  --muted2: #7a7a7a;
+  --line: rgba(255,255,255,.10);
+  --line2: rgba(255,255,255,.07);
+  --line-strong: rgba(255,255,255,.16);
+  --accent: #ffffff;
+  --accent-fg: #0a0a0a;
+  --badge-bg: rgba(0,114,245,.16);
+  --badge-text: #6cb8ff;
+  --develop: #4c9fff;
+  --preview: #f06ad4;
+  --ship: #ff7b6e;
+  --sel: rgba(255,255,255,.9);
+  --hero-glow: radial-gradient(600px 300px at 50% -50px, rgba(255,255,255,.05), transparent 70%);
+}
+
+/* ============ 2. PRISM (Stripe) — purple gradient, weight-300 elegance ============ */
+[data-theme="prism-light"] {
+  --bg: #fafaff;
+  --surface: #ffffff;
+  --nav-bg: rgba(255,255,255,.86);
+  --text: #1a1a2e;
+  --muted: #5b5b80;
+  --muted2: #8f8fb0;
+  --line: rgba(99,91,255,.14);
+  --line2: rgba(99,91,255,.10);
+  --line-strong: rgba(99,91,255,.22);
+  --accent: #635bff;
+  --accent-fg: #ffffff;
+  --badge-bg: #ecebff;
+  --badge-text: #635bff;
+  --develop: #635bff;
+  --preview: #c45cff;
+  --ship: #ff6b6b;
+  --sel: #ecebff;
+  --font-display: 'Geist', system-ui, sans-serif;
+  --hero-glow: radial-gradient(700px 400px at 30% -80px, rgba(99,91,255,.18), transparent 70%), radial-gradient(600px 380px at 80% -60px, rgba(196,92,255,.14), transparent 70%);
+}
+[data-theme="prism-dark"] {
+  --bg: #0d0b1f;
+  --surface: #161330;
+  --nav-bg: rgba(13,11,31,.86);
+  --text: #ecebfa;
+  --muted: #a6a3cf;
+  --muted2: #6f6c9c;
+  --line: rgba(140,130,255,.16);
+  --line2: rgba(140,130,255,.10);
+  --line-strong: rgba(140,130,255,.28);
+  --accent: #7c76ff;
+  --accent-fg: #ffffff;
+  --badge-bg: rgba(124,118,255,.18);
+  --badge-text: #b3aeff;
+  --develop: #8f86ff;
+  --preview: #d18bff;
+  --ship: #ff8b8b;
+  --sel: rgba(124,118,255,.4);
+  --font-display: 'Geist', system-ui, sans-serif;
+  --hero-glow: radial-gradient(700px 400px at 30% -80px, rgba(124,118,255,.22), transparent 70%), radial-gradient(600px 380px at 80% -60px, rgba(209,139,255,.12), transparent 70%);
+}

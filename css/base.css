@@ -1,0 +1,114 @@
+/* Base layout + typography. Theme palettes live in palettes.css (data-theme overrides). */
+:root {
+  --maxw: 1080px;
+  --font: 'Geist', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Geist', system-ui, sans-serif;
+  --mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --radius: 8px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  transition: background .25s ease, color .25s ease;
+}
+::selection { background: var(--sel, hsla(0,0%,95%,1)); }
+a { color: inherit; }
+h1, h2, h3, .logo { font-family: var(--font-display); }
+
+/* ---------- Nav ---------- */
+header {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--nav-bg, var(--bg));
+  backdrop-filter: blur(10px);
+  box-shadow: var(--ring);
+  transition: background .25s ease;
+}
+nav {
+  max-width: var(--maxw); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 24px;
+}
+.logo {
+  font-weight: 600; font-size: 16px; letter-spacing: -0.32px;
+  display: flex; align-items: center; gap: 10px; text-decoration: none;
+}
+.logo-mark {
+  width: 28px; height: 28px; border-radius: 6px;
+  background: var(--accent); color: var(--accent-fg);
+  display: grid; place-items: center;
+  font-family: var(--mono); font-size: 13px; font-weight: 500;
+  transition: background .25s ease, color .25s ease;
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  font-size: 14px; font-weight: 500; text-decoration: none;
+  transition: opacity .15s;
+}
+.nav-links a:hover { opacity: .6; }
+
+/* ---------- Buttons ---------- */
+.btn-dark {
+  background: var(--accent); color: var(--accent-fg);
+  padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: 500;
+  text-decoration: none; border: none; cursor: pointer; transition: opacity .15s, background .25s, color .25s;
+}
+.btn-dark:hover { opacity: .85; }
+.btn-ghost {
+  background: transparent; color: var(--text);
+  padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: 500;
+  text-decoration: none; box-shadow: var(--ring); transition: opacity .15s;
+}
+.btn-ghost:hover { opacity: .75; }
+
+/* ---------- Layout ---------- */
+main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+section { padding: 96px 0; }
+.mono-label {
+  font-family: var(--mono); font-size: 12px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: .02em; color: var(--muted2);
+  display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;
+}
+.mono-label::before { content: ''; width: 16px; height: 1px; background: var(--line-strong, var(--line)); }
+
+/* ---------- Hero ---------- */
+.hero { padding: 120px 0 96px; position: relative; }
+.hero::before {
+  content: ''; position: absolute; inset: -1px 0 0 0;
+  background: var(--hero-glow, transparent);
+  pointer-events: none; z-index: -1;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--badge-bg); color: var(--badge-text);
+  border-radius: 9999px; padding: 4px 12px;
+  font-size: 12px; font-weight: 500; margin-bottom: 28px;
+}
+.hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--badge-text); }
+h1 {
+  font-size: clamp(40px, 7vw, 64px); font-weight: 600;
+  letter-spacing: -2.8px; line-height: 1.02; margin-bottom: 24px; color: var(--text);
+}
+h1 .muted { color: var(--muted2); }
+.hero-sub { font-size: 20px; color: var(--muted); max-width: 620px; margin-bottom: 40px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 72px; }
+.stat {
+  background: var(--surface); border-radius: var(--radius); padding: 24px;
+  box-shadow: var(--ring); transition: box-shadow .2s, background .25s;
+}
+.stat:hover { box-shadow: var(--card-shadow); }
+.stat b { display: block; font-size: 40px; font-weight: 600; letter-spacing: -1.6px; color: var(--text); }
+.stat span { font-size: 15px; color: var(--muted); }
+
+/* ---------- Section titles ---------- */
+h2 {
+  font-size: clamp(30px, 4.5vw, 40px); font-weight: 600; letter-spacing: -2.2px;
+  line-height: 1.12; margin-bottom: 16px; color: var(--text);
+}
+.sec-desc { font-size: 17px; color: var(--muted); max-width: 640px; margin-bottom: 48px; }

@@ -1,0 +1,87 @@
+/* ============ 3. EMBER — warm terracotta, serif display ============ */
+[data-theme="ember-light"] {
+  --bg: #fbf8f4;
+  --surface: #fffdfa;
+  --nav-bg: rgba(251,248,244,.9);
+  --text: #2b211b;
+  --muted: #6b5a4c;
+  --muted2: #a08b78;
+  --line: rgba(90,60,30,.12);
+  --line2: rgba(90,60,30,.08);
+  --line-strong: rgba(90,60,30,.18);
+  --accent: #c0552b;
+  --accent-fg: #fff8f0;
+  --badge-bg: #f6e4d3;
+  --badge-text: #a04a26;
+  --develop: #c0552b;
+  --preview: #d06a3a;
+  --ship: #b5402f;
+  --sel: #f0dfcc;
+  --font-display: 'Lora', Georgia, 'Times New Roman', serif;
+  --hero-glow: radial-gradient(620px 340px at 50% -90px, rgba(192,85,43,.12), transparent 70%);
+}
+[data-theme="ember-dark"] {
+  --bg: #1a140e;
+  --surface: #241c14;
+  --nav-bg: rgba(26,20,14,.9);
+  --text: #f0e5d6;
+  --muted: #b6a285;
+  --muted2: #8a7760;
+  --line: rgba(240,229,214,.12);
+  --line2: rgba(240,229,214,.07);
+  --line-strong: rgba(240,229,214,.2);
+  --accent: #e07a45;
+  --accent-fg: #1a140e;
+  --badge-bg: rgba(224,122,69,.2);
+  --badge-text: #f2a876;
+  --develop: #e8956a;
+  --preview: #d88a4f;
+  --ship: #f07a5a;
+  --sel: rgba(224,122,69,.4);
+  --font-display: 'Lora', Georgia, 'Times New Roman', serif;
+  --hero-glow: radial-gradient(620px 340px at 50% -90px, rgba(224,122,69,.16), transparent 70%);
+}
+
+/* ============ 4. FOREST — deep emerald, Supabase ============ */
+[data-theme="forest-light"] {
+  --bg: #f6faf7;
+  --surface: #ffffff;
+  --nav-bg: rgba(246,250,247,.88);
+  --text: #123224;
+  --muted: #4e6b5a;
+  --muted2: #7d9989;
+  --line: rgba(22,101,62,.12);
+  --line2: rgba(22,101,62,.08);
+  --line-strong: rgba(22,101,62,.2);
+  --accent: #208a5b;
+  --accent-fg: #ffffff;
+  --badge-bg: #e2f3ea;
+  --badge-text: #187a50;
+  --develop: #3fcf8e;
+  --preview: #22b573;
+  --ship: #0f8a5c;
+  --sel: #d9efe2;
+  --font-display: 'Geist', system-ui, sans-serif;
+  --hero-glow: radial-gradient(620px 340px at 50% -90px, rgba(63,207,142,.14), transparent 70%);
+}
+[data-theme="forest-dark"] {
+  --bg: #0a1510;
+  --surface: #10241b;
+  --nav-bg: rgba(10,21,16,.9);
+  --text: #dcf2e6;
+  --muted: #8fb7a3;
+  --muted2: #5f8571;
+  --line: rgba(220,242,230,.10);
+  --line2: rgba(220,242,230,.06);
+  --line-strong: rgba(220,242,230,.18);
+  --accent: #3ecf8e;
+  --accent-fg: #0a1510;
+  --badge-bg: rgba(62,207,142,.16);
+  --badge-text: #6fdcac;
+  --develop: #5ce0a7;
+  --preview: #3ecf8e;
+  --ship: #23b376;
+  --sel: rgba(62,207,142,.35);
+  --font-display: 'Geist', system-ui, sans-serif;
+  --hero-glow: radial-gradient(620px 340px at 50% -90px, rgba(62,207,142,.14), transparent 70%);
+}

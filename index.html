@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="minimal-light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,211 +8,11 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23171717'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23ffffff' font-family='monospace'>S</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --black: #171717;
-      --white: #ffffff;
-      --gray-600: #4d4d4d;
-      --gray-500: #666666;
-      --gray-100: #ebebeb;
-      --gray-50: #fafafa;
-      --link-blue: #0072f5;
-      --badge-bg: #ebf5ff;
-      --badge-text: #0068d6;
-      --focus: hsla(212, 100%, 48%, 1);
-      --shadow-border: rgba(0,0,0,0.08) 0px 0px 0px 1px;
-      --shadow-card: rgba(0,0,0,0.08) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 2px, rgba(0,0,0,0.04) 0px 8px 8px -8px, #fafafa 0px 0px 0px 1px;
-      --maxw: 1080px;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Geist', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      font-feature-settings: "liga";
-      color: var(--black);
-      background: var(--white);
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
-    }
-    ::selection { background: hsla(0, 0%, 95%, 1); }
-
-    /* ---------- Nav ---------- */
-    header {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(8px);
-      box-shadow: var(--shadow-border);
-    }
-    nav {
-      max-width: var(--maxw); margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 14px 24px;
-    }
-    .logo {
-      font-weight: 600; font-size: 16px; letter-spacing: -0.32px;
-      display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;
-    }
-    .logo-mark {
-      width: 28px; height: 28px; border-radius: 6px; background: var(--black);
-      color: var(--white); display: grid; place-items: center;
-      font-family: 'Geist Mono', monospace; font-size: 13px; font-weight: 500;
-    }
-    .nav-links { display: flex; align-items: center; gap: 28px; }
-    .nav-links a {
-      font-size: 14px; font-weight: 500; color: var(--black); text-decoration: none;
-      transition: opacity 0.15s;
-    }
-    .nav-links a:hover { opacity: 0.6; }
-    .btn-dark {
-      background: var(--black); color: var(--white);
-      padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: 500;
-      text-decoration: none; border: none; cursor: pointer; transition: opacity 0.15s;
-    }
-    .btn-dark:hover { opacity: 0.85; }
-    .btn-ghost {
-      background: var(--white); color: var(--black);
-      padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: 500;
-      text-decoration: none; box-shadow: var(--shadow-border); transition: opacity 0.15s;
-    }
-    .btn-ghost:hover { opacity: 0.75; }
-
-    /* ---------- Layout ---------- */
-    main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
-    section { padding: 96px 0; }
-    .mono-label {
-      font-family: 'Geist Mono', monospace; font-size: 12px; font-weight: 500;
-      text-transform: uppercase; letter-spacing: 0.02em; color: var(--gray-500);
-      display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;
-    }
-    .mono-label::before { content: ''; width: 16px; height: 1px; background: var(--gray-100); }
-
-    /* ---------- Hero ---------- */
-    .hero { padding: 120px 0 96px; text-align: left; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--badge-bg); color: var(--badge-text);
-      border-radius: 9999px; padding: 4px 12px;
-      font-size: 12px; font-weight: 500; margin-bottom: 28px;
-    }
-    .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--badge-text); }
-    h1 {
-      font-size: clamp(40px, 7vw, 64px); font-weight: 600;
-      letter-spacing: -2.8px; line-height: 1.02; margin-bottom: 24px;
-    }
-    h1 .muted { color: var(--gray-500); }
-    .hero-sub {
-      font-size: 20px; color: var(--gray-600); max-width: 620px; margin-bottom: 40px;
-    }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-
-    .stats {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 72px;
-    }
-    .stat {
-      background: var(--white); border-radius: 8px; padding: 24px;
-      box-shadow: var(--shadow-border); transition: box-shadow 0.2s;
-    }
-    .stat:hover { box-shadow: var(--shadow-card); }
-    .stat b { display: block; font-size: 40px; font-weight: 600; letter-spacing: -1.6px; }
-    .stat span { font-size: 15px; color: var(--gray-600); }
-
-    /* ---------- Section titles ---------- */
-    h2 {
-      font-size: clamp(30px, 4.5vw, 40px); font-weight: 600; letter-spacing: -2.2px;
-      line-height: 1.12; margin-bottom: 16px;
-    }
-    .sec-desc { font-size: 17px; color: var(--gray-600); max-width: 640px; margin-bottom: 48px; }
-
-    /* ---------- Skills ---------- */
-    .skills { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
-    .skill {
-      display: flex; align-items: center; gap: 12px;
-      padding: 14px 16px; border-radius: 8px; background: var(--white);
-      box-shadow: var(--shadow-border); font-size: 15px;
-    }
-    .skill .tag {
-      font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--badge-text);
-      background: var(--badge-bg); border-radius: 9999px; padding: 2px 10px; white-space: nowrap;
-    }
-
-    /* ---------- Projects ---------- */
-    .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
-    .project {
-      background: var(--white); border-radius: 10px; padding: 28px;
-      box-shadow: var(--shadow-border); transition: box-shadow 0.2s, transform 0.2s;
-      display: flex; flex-direction: column; gap: 12px;
-    }
-    .project:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
-    .project .proj-top { display: flex; align-items: center; justify-content: space-between; }
-    .project h3 { font-size: 22px; font-weight: 600; letter-spacing: -0.9px; }
-    .project .proj-mono {
-      font-family: 'Geist Mono', monospace; font-size: 12px; font-weight: 500;
-      color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.02em;
-    }
-    .project p { font-size: 15px; color: var(--gray-600); flex: 1; }
-    .proj-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .proj-tags span {
-      font-size: 12px; font-weight: 500; color: var(--badge-text);
-      background: var(--badge-bg); border-radius: 9999px; padding: 2px 10px;
-    }
-    .project .arrow { font-size: 16px; color: var(--gray-500); }
-
-    /* ---------- Workflow ---------- */
-    .pipeline {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px;
-    }
-    .step {
-      border-radius: 8px; padding: 24px; box-shadow: var(--shadow-border); background: var(--white);
-    }
-    .step .step-name {
-      font-family: 'Geist Mono', monospace; font-size: 12px; font-weight: 500;
-      text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 12px; display: block;
-    }
-    .step h3 { font-size: 22px; font-weight: 600; letter-spacing: -0.9px; margin-bottom: 8px; }
-    .step p { font-size: 15px; color: var(--gray-600); }
-    .step.blue .step-name { color: #0a72ef; }
-    .step.pink .step-name { color: #de1d8d; }
-    .step.red .step-name { color: #ff5b4f; }
-
-    /* ---------- Contact ---------- */
-    .contact-panel {
-      border-radius: 12px; padding: 48px;
-      box-shadow: var(--shadow-card); text-align: left;
-    }
-    .contact-panel h2 { margin-bottom: 12px; }
-    .contact-panel .sec-p { font-size: 17px; color: var(--gray-600); margin-bottom: 32px; max-width: 560px; }
-    .contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
-
-    /* ---------- Footer ---------- */
-    footer {
-      border-top: 1px solid var(--gray-100);
-      max-width: var(--maxw); margin: 48px auto 0; padding: 40px 24px;
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
-    }
-    footer .f-mono { font-family: 'Geist Mono', monospace; font-size: 13px; color: var(--gray-500); }
-    footer .f-links { display: flex; gap: 24px; }
-    footer .f-links a { font-size: 14px; color: var(--black); text-decoration: none; font-weight: 500; }
-    footer .f-links a:hover { opacity: 0.6; }
-
-    /* ---------- Reveal animation ---------- */
-    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-
-    /* ---------- Responsive ---------- */
-    @media (max-width: 768px) {
-      section { padding: 64px 0; }
-      .hero { padding: 90px 0 72px; }
-      .stats { grid-template-columns: 1fr; }
-      .pipeline { grid-template-columns: 1fr; }
-      .nav-links { gap: 16px; }
-      .nav-links .btn-dark { display: none; }
-      footer { flex-direction: column; align-items: flex-start; }
-    }
-    @media (min-width: 769px) {
-      .stats { grid-template-columns: repeat(3, 1fr); }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/palettes-a.css">
+  <link rel="stylesheet" href="css/palettes-b.css">
 </head>
 <body>
 
@@ -268,7 +68,6 @@
       <div class="skill">Node.js <span class="tag">инструменты</span></div>
     </div>
   </section>
-
   <!-- PROJECTS -->
   <section id="projects">
     <span class="mono-label">Проекты</span>
@@ -300,23 +99,22 @@
     <p class="sec-desc">Прозрачный цикл: вы всегда знаете, на какой стадии проект и что будет результатом.</p>
     <div class="pipeline">
       <div class="step blue reveal">
-        <span class="step-name">01 · Анализ</span>
+        <span class="step-name s1">01 · Анализ</span>
         <h3>Разбираю задачу</h3>
         <p>Что собираем, откуда, как часто, что на выходе. Оцениваю реализуемость и узкие места ещё до старта.</p>
       </div>
       <div class="step pink reveal">
-        <span class="step-name">02 · Сборка</span>
+        <span class="step-name s2">02 · Сборка</span>
         <h3>Пишу и тестирую</h3>
         <p>Прототип на реальных данных, затем надёжная версия: обработка ошибок, логи, перезапуск, хранение.</p>
       </div>
       <div class="step red reveal">
-        <span class="step-name">03 · Запуск</span>
+        <span class="step-name s3">03 · Запуск</span>
         <h3>Сдаю результат</h3>
         <p>Разворачиваю на вашем или моём сервере, настраиваю расписание и поддержку. Дальше — развитие.</p>
       </div>
     </div>
   </section>
-
   <!-- CONTACT -->
   <section id="contact">
     <div class="contact-panel reveal">
@@ -343,6 +141,29 @@
   </div>
 </footer>
 
+<!-- Theme switcher -->
+<button class="fab" id="fab" aria-label="Тема сайта" title="Темы оформления">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="3"></circle>
+    <path d="M12 1v4m0 14v4M4.22 4.22l2.83 2.83m9.9 9.9 2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9 2.83-2.83"></path>
+  </svg>
+</button>
+<div class="theme-panel" id="themePanel">
+  <div class="tp-head">Темы <button class="tp-x" id="tpClose" aria-label="Закрыть">×</button></div>
+  <div class="tp-row"><span>Minimal</span><div class="tp-swatches">
+    <button class="tp-pill" data-theme-target="minimal-light">Светлая</button>
+    <button class="tp-pill" data-theme-target="minimal-dark">Тёмная</button></div></div>
+  <div class="tp-row"><span>Prism</span><div class="tp-swatches">
+    <button class="tp-pill" data-theme-target="prism-light">Светлая</button>
+    <button class="tp-pill" data-theme-target="prism-dark">Тёмная</button></div></div>
+  <div class="tp-row"><span>Ember</span><div class="tp-swatches">
+    <button class="tp-pill" data-theme-target="ember-light">Светлая</button>
+    <button class="tp-pill" data-theme-target="ember-dark">Тёмная</button></div></div>
+  <div class="tp-row"><span>Forest</span><div class="tp-swatches">
+    <button class="tp-pill" data-theme-target="forest-light">Светлая</button>
+    <button class="tp-pill" data-theme-target="forest-dark">Тёмная</button></div></div>
+</div>
+
 <script>
   // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
@@ -352,6 +173,34 @@
 
   // Year
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Theme
+  const root = document.documentElement;
+  const KEY = 'site-theme';
+  const themes = ['minimal-light','minimal-dark','prism-light','prism-dark','ember-light','ember-dark','forest-light','forest-dark'];
+  function applyTheme(name) {
+    if (!themes.includes(name)) return;
+    root.setAttribute('data-theme', name);
+    try { localStorage.setItem(KEY, name); } catch(e) {}
+    document.querySelectorAll('.tp-pill').forEach(b => {
+      b.classList.toggle('on', b.dataset.themeTarget === name);
+    });
+  }
+  const saved = (function(){ try { return localStorage.getItem(KEY); } catch(e) { return null; } })();
+  applyTheme(saved || 'minimal-light');
+
+  document.getElementById('fab').addEventListener('click', () => {
+    document.getElementById('themePanel').classList.toggle('open');
+  });
+  document.getElementById('tpClose').addEventListener('click', () => {
+    document.getElementById('themePanel').classList.remove('open');
+  });
+  document.querySelectorAll('.tp-pill').forEach(b => {
+    b.addEventListener('click', () => {
+      applyTheme(b.dataset.themeTarget);
+      document.getElementById('themePanel').classList.remove('open');
+    });
+  });
 </script>
 </body>
 </html>
